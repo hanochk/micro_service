@@ -175,6 +175,7 @@ class InferParam(BaseModel):#HK @TODO
     movie_id : str
     frame_boundary: str
     caption_type : str
+    append_to_db : str
 
 
 
@@ -193,11 +194,12 @@ def infer(form: InferParam):
     movie_id = form.movie_id
     frame_boundary = form.frame_boundary
     caption_type = form.caption_type
+    append_to_db = form.append_to_db
 
     
-    print("Current movie id: {}".format(movie_id, eval(frame_boundary), caption_type))
+    print("Current movie id: {}".format(movie_id, eval(frame_boundary), caption_type, append_to_db)) # TODO
 
-    answer = summy_logic.summarize_scene_forward(movie_id, eval(frame_boundary), caption_type)
+    answer = summy_logic.summarize_scene_forward(movie_id, eval(frame_boundary), caption_type, eval(append_to_db)) # TODO
     print('Output: {}'.format(answer))
     return {'answer': answer}
 
