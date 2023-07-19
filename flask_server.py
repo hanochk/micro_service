@@ -199,7 +199,7 @@ def infer(form: InferParam):
     
     print("Current movie id: {}".format(movie_id, eval(frame_boundary), caption_type, append_to_db)) # TODO
 
-    answer = summy_logic.summarize_scene_forward(movie_id, eval(frame_boundary), caption_type, eval(append_to_db)) # TODO
+    answer = summy_logic.summarize_scene_forward(movie_id, eval(frame_boundary), caption_type, eval(append_to_db)) # @@HK TODO embed in answer error msg or any return msg you would like and pigibag it over the returned JSON
     print('Output: {}'.format(answer))
     return {'answer': answer}
 
